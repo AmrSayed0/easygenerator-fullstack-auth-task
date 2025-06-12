@@ -54,12 +54,10 @@ export const authService = {
       );
       return response.data;
     } catch (error: any) {
-      console.error("SignIn Error:", error);
-
-      // Check if it's a network error
+      console.error("SignIn Error:", error); // Check if it's a network error
       if (!error.response) {
         throw new Error(
-          "Network error: Unable to connect to server. Please check if the backend is running on http://localhost:3000"
+          `Network error: Unable to connect to server. Please check if the backend is running on ${API_CONFIG.BASE_URL}`
         );
       }
 
