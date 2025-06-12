@@ -103,21 +103,25 @@ npm run dev
 ## Project Structure
 
 ```
-├── src/                          # Backend source
-│   ├── auth/                     # Authentication module
-│   ├── users/                    # User management
-│   ├── prisma/                   # Database service
-│   └── main.ts                   # Application entry
-├── frontend/
-│   ├── src/
-│   │   ├── pages/               # React pages
-│   │   ├── components/          # Reusable components
-│   │   ├── contexts/            # Auth context
-│   │   ├── services/            # API services
-│   │   └── utils/               # Validation utilities
-├── prisma/
-│   └── schema.prisma            # Database schema
-└── README.md                    # Project documentation
+├── backend/                     # NestJS Backend Application
+│   ├── prisma/                  # Database schema and migrations
+│   └── src/                     # Backend source code
+│       ├── auth/                # Authentication module
+│       ├── prisma/              # Database service module
+│       └── users/               # User management module
+└── frontend/                    # React Frontend Application
+    ├── public/                  # Static assets
+    └── src/                     # Frontend source code
+        ├── assets/              # Static assets
+        ├── components/          # Reusable UI components
+        ├── config/              # Configuration files
+        ├── contexts/            # React Context providers
+        ├── pages/               # Page components
+        ├── services/            # API service layer
+        ├── styles/              # Global styles
+        ├── types/               # TypeScript type definitions
+        └── utils/               # Utility functions
+├── README.md                    # Main project documentation
 ```
 
 ## User Interface
@@ -151,6 +155,7 @@ curl -X POST http://localhost:3000/auth/signin \
 - Verify protected route access
 - Test responsive design on different screen sizes
 
-## Live Demo
+## Production Deployment & Live Demo
 
-- **A live demo of the application is available at**: [Live Demo](http://localhost:5173)
+- **Frontend**: Deployed on Vercel – [Live Demo](https://easygenerator-fullstack-auth-task.vercel.app/)
+- **Backend API**: Hosted on DigitalOcean – [Live Endpoint](https://easygenerator-backend-auth-ilem6.ondigitalocean.app/)
